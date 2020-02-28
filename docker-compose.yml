@@ -23,6 +23,8 @@ services:
       PHP_FPM_HOST: treinamento-api_php
     volumes:
       - .:/application
+    ports:
+       - "8100:80"
     depends_on: 
       - php
     networks:

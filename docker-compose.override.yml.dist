@@ -8,10 +8,6 @@ services:
     depends_on:
       - mysql
 
-  treinamento-api_nginx:
-    ports:
-      - "8100:80"
-
   mysql:
     container_name: treinamento-api_mysql
     image: mysql:5.7
