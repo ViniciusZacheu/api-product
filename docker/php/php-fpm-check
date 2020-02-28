@@ -1,0 +1,6 @@
+#!/bin/sh
+
+REQUEST_METHOD=GET \
+SCRIPT_FILENAME=/ping \
+SCRIPT_NAME=/ping \
+cgi-fcgi -bind -connect localhost:9000 | grep --quiet pong

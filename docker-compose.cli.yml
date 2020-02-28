@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  composer:
+    container_name: treinamento-api_composer
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - .:/application
+      - composer-cache:/root/.composer/cache
+      - ${COMPOSER_HOME:-~/.composer}/auth.json:/root/.composer/auth.json
+    entrypoint: composer
+
+  php:
+    container_name: treinamento-api_php-cli
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - .:/application
+    entrypoint: php
+
+volumes:
+  composer-cache:
+    name: composer-cache
