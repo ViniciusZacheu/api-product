@@ -12,8 +12,9 @@ services:
     networks:
       - app-gateway
 
-  nginx:
+  treinamento-api_nginx:
     container_name: treinamento-api_nginx
+    hostname: treinamento-api_nginx
     build:
       context: .
       dockerfile: docker/nginx/Dockerfile
