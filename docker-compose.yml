@@ -9,6 +9,8 @@ services:
     restart: always
     volumes:
       - .:/application
+    networks:
+      - app-gateway
 
   nginx:
     container_name: treinamento-api_nginx
@@ -22,3 +24,9 @@ services:
       - .:/application
     depends_on: 
       - php
+    networks:
+      - app-gateway
+
+networks:
+  app-gateway:
+    external: true
