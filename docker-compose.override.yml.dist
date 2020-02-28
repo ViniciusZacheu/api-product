@@ -18,6 +18,9 @@ services:
     environment:
       MYSQL_DATABASE: treinamento-api
       MYSQL_ROOT_PASSWORD: treinamento-api
+    networks:
+      - app-gateway
+
 
 volumes:
   treinamento-api-db-data:
